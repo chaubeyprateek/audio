@@ -1994,6 +1994,8 @@ status_t AudioPolicyManagerCustom::startInput(audio_io_handle_t input,
         audio_devices_t primaryInputDevices = availablePrimaryInputDevices();
         if (((device & primaryInputDevices & ~AUDIO_DEVICE_BIT_IN) != 0) &&
                 mInputs.activeInputsCountOnDevices(primaryInputDevices) == 0) {
+
+        if (mInputs.activeInputsCountOnDevices() == 0) {
             SoundTrigger::setCaptureState(true);
         }
         setInputDevice(input, device, true /* force */);
