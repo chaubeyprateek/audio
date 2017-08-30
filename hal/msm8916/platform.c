@@ -3292,7 +3292,6 @@ done:
     return ret;
 }
 
-<<<<<<< HEAD
 int platform_set_stream_channel_map(void *platform, audio_channel_mask_t channel_mask, int snd_id)
 {
     int ret = 0;
