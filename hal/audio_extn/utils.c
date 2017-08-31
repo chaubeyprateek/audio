@@ -512,16 +512,11 @@ int audio_extn_utils_send_app_type_cfg(struct audio_device *adev,
         goto exit_send_app_type_cfg;
     }
 
-    out = usecase->stream.out;
-    adev = out->dev;
-
     if (adev == NULL) {
         ALOGE("Device not ready, skip app type update");
         rc = 0;
         goto exit_send_app_type_cfg;
     }
-
-    snd_device = usecase->out_snd_device;
 
     if (usecase->type == PCM_PLAYBACK) {
         snd_device = usecase->out_snd_device;
